@@ -30,6 +30,7 @@ from urllib3.util.retry import Retry
 
 
 PORTAL_URL = "https://haryanarera.gov.in/admincontrol/registered_projects/1"
+GURUGRAM_PORTAL_URL = "https://haryanarera.gov.in/admincontrol/registered_projects/2"
 BASE_URL = "https://haryanarera.gov.in/"
 UP_RERA_PROJECTS_URL = "https://www.up-rera.in/View_projects.aspx"
 UP_RERA_API_URL = "https://uprera.azurewebsites.net/admin_rera.asmx/get_disitrict_project"
@@ -535,6 +536,12 @@ def check_once(
 ) -> tuple[int, int]:
     fetchers = {
         "Haryana RERA": lambda: extract_registered_projects(get_html(session, PORTAL_URL)),
+        # Haryana RERA publishes Gurugram authority registrations on a separate
+        # official list. Keep a distinct baseline key so existing Gurugram
+        # registrations are imported without being mistaken for new alerts.
+        "Haryana RERA Gurugram": lambda: extract_registered_projects(
+            get_html(session, GURUGRAM_PORTAL_URL)
+        ),
         "UP RERA": lambda: get_up_rera_projects(session),
     }
     total_projects = 0

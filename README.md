@@ -1,6 +1,6 @@
 # Haryana + UP RERA new-registration email monitor
 
-This service polls the official statewide Haryana RERA registered-project list and the official UP RERA Gautam Buddha Nagar district feed. It emails each newly appearing registration to `bharadwajr278@gmail.com`.
+This service polls both official Haryana RERA registered-project lists (Panchkula/all other Haryana districts and the separate Gurugram authority list) plus the official UP RERA Gautam Buddha Nagar district feed. It emails each newly appearing registration to `bharadwajr278@gmail.com`.
 
 Priority coverage:
 
@@ -121,6 +121,8 @@ duplicate prevention across scheduled runs.
 ## Official sources
 
 `https://haryanarera.gov.in/admincontrol/registered_projects/1`
+
+`https://haryanarera.gov.in/admincontrol/registered_projects/2`
 
 `https://www.up-rera.in/View_projects.aspx`
 
