@@ -1,12 +1,21 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { ArrowUpRight, BellRing, CircleAlert, Clock3, Database, MailCheck, Search, ShieldCheck, Star } from "lucide-react";
+import { ArrowUpRight, BellRing, Building2, CircleAlert, Clock3, Database, MailCheck, MapPinned, Search, ShieldCheck, Star } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { NativeSelect, NativeSelectOption } from "@/components/ui/native-select";
 import type { Notification } from "./page";
 
 const PAGE_SIZE = 50;
+type MarketFilter = "all" | "gurugram" | "faridabad" | "noida" | "other";
+
+function getMarket(item: Notification): Exclude<MarketFilter, "all"> {
+  const place = `${item.city || ""} ${item.location || ""}`.toLocaleLowerCase();
+  if (place.includes("gurugram") || place.includes("gurgaon")) return "gurugram";
+  if (place.includes("faridabad")) return "faridabad";
+  if (place.includes("noida") || place.includes("gautam buddha nagar") || place.includes("gautam buddh nagar")) return "noida";
+  return "other";
+}
 
 function formatDate(value: string | null) {
   if (!value) return "—";
@@ -29,15 +38,16 @@ export default function Dashboard({ initialNotifications, viewerEmail, signOutPa
   const [query, setQuery] = useState("");
   const [source, setSource] = useState("all");
   const [status, setStatus] = useState("all");
+  const [market, setMarket] = useState<MarketFilter>("all");
   const [page, setPage] = useState(1);
 
   const filtered = useMemo(() => {
     const needle = query.trim().toLocaleLowerCase();
     return initialNotifications.filter((item) => {
       const searchable = [item.project_name, item.rera_number, item.developer, item.city, item.location].join(" ").toLocaleLowerCase();
-      return (!needle || searchable.includes(needle)) && (source === "all" || item.source === source) && (status === "all" || item.email_status === status);
+      return (!needle || searchable.includes(needle)) && (source === "all" || item.source === source) && (status === "all" || item.email_status === status) && (market === "all" || getMarket(item) === market);
     });
-  }, [initialNotifications, query, source, status]);
+  }, [initialNotifications, market, query, source, status]);
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
   const safePage = Math.min(page, totalPages);
@@ -49,6 +59,13 @@ export default function Dashboard({ initialNotifications, viewerEmail, signOutPa
     pending: initialNotifications.filter((item) => item.email_status === "pending").length,
     failed: initialNotifications.filter((item) => item.email_status === "failed").length,
     priority: initialNotifications.filter((item) => item.priority).length,
+    gurugram: initialNotifications.filter((item) => getMarket(item) === "gurugram").length,
+    faridabad: initialNotifications.filter((item) => getMarket(item) === "faridabad").length,
+  };
+
+  const selectMarket = (value: MarketFilter) => {
+    setMarket(value);
+    setPage(1);
   };
 
   return (
@@ -65,7 +82,7 @@ export default function Dashboard({ initialNotifications, viewerEmail, signOutPa
       </header>
 
       <div className="mx-auto -mt-16 max-w-[1500px] px-3 pb-12 sm:px-6">
-        <section className="grid grid-cols-2 gap-3 lg:grid-cols-5" aria-label="Notification summary">
+        <section className="grid grid-cols-2 gap-3 md:grid-cols-4 xl:grid-cols-7" aria-label="Notification summary">
           {[
             ["All projects", stats.total, Database, "text-blue-700"], ["Emails sent", stats.sent, MailCheck, "text-emerald-700"],
             ["Pending", stats.pending, Clock3, "text-amber-700"], ["Failed", stats.failed, CircleAlert, "text-red-700"],
@@ -76,6 +93,22 @@ export default function Dashboard({ initialNotifications, viewerEmail, signOutPa
               <p className="text-sm font-semibold text-slate-500">{label as string}</p><strong className="mt-1 block font-serif text-3xl">{value as number}</strong>
             </article>
           ))}
+          {[
+            ["Gurugram", stats.gurugram, Building2, "text-cyan-700", "gurugram"],
+            ["Faridabad", stats.faridabad, MapPinned, "text-fuchsia-700", "faridabad"],
+          ].map(([label, value, Icon, tone, valueKey]) => (
+            <button
+              key={String(label)}
+              type="button"
+              onClick={() => selectMarket(valueKey as MarketFilter)}
+              aria-pressed={market === valueKey}
+              className={`rounded-xl border bg-white p-4 text-left shadow-[0_10px_30px_rgba(15,33,52,.08)] transition hover:-translate-y-0.5 hover:border-blue-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 sm:p-5 ${market === valueKey ? "border-blue-500 ring-2 ring-blue-100" : "border-slate-200"}`}
+            >
+              <div className={`mb-5 inline-flex rounded-lg bg-slate-100 p-2 ${tone}`}><Icon className="size-5" /></div>
+              <p className="text-sm font-semibold text-slate-500">{label as string}</p><strong className="mt-1 block font-serif text-3xl">{value as number}</strong>
+              <span className="mt-2 block text-xs font-bold text-blue-700">View projects →</span>
+            </button>
+          ))}
         </section>
 
         <section className="mt-5 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_10px_35px_rgba(15,33,52,.06)]">
@@ -83,8 +116,9 @@ export default function Dashboard({ initialNotifications, viewerEmail, signOutPa
             <div><p className="text-xs font-bold uppercase tracking-[.14em] text-blue-600">Notification ledger</p><h2 className="mt-1 font-serif text-2xl font-bold">Projects & email delivery</h2></div>
             <div className="flex items-center gap-2 text-sm text-slate-500"><BellRing className="size-4 text-emerald-600" /> Secure live records</div>
           </div>
-          <div className="grid gap-3 border-b border-slate-200 bg-slate-50/80 p-4 md:grid-cols-[minmax(260px,2fr)_1fr_1fr]">
+          <div className="grid gap-3 border-b border-slate-200 bg-slate-50/80 p-4 lg:grid-cols-[minmax(260px,2fr)_1fr_1fr_1fr]">
             <label className="relative"><span className="sr-only">Search projects</span><Search className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-slate-400" /><Input value={query} onChange={(event) => { setQuery(event.target.value); setPage(1); }} className="h-11 bg-white pl-9 text-base" placeholder="Search project, RERA number or builder" /></label>
+            <NativeSelect value={market} onChange={(event) => selectMarket(event.target.value as MarketFilter)} className="h-11 w-full bg-white text-base"><NativeSelectOption value="all">All markets</NativeSelectOption><NativeSelectOption value="gurugram">Gurugram</NativeSelectOption><NativeSelectOption value="faridabad">Faridabad</NativeSelectOption><NativeSelectOption value="noida">Noida / Greater Noida</NativeSelectOption><NativeSelectOption value="other">Other Haryana</NativeSelectOption></NativeSelect>
             <NativeSelect value={source} onChange={(event) => { setSource(event.target.value); setPage(1); }} className="h-11 w-full bg-white text-base"><NativeSelectOption value="all">All sources</NativeSelectOption>{sources.map((item) => <NativeSelectOption key={item} value={item}>{item}</NativeSelectOption>)}</NativeSelect>
             <NativeSelect value={status} onChange={(event) => { setStatus(event.target.value); setPage(1); }} className="h-11 w-full bg-white text-base"><NativeSelectOption value="all">All email statuses</NativeSelectOption><NativeSelectOption value="sent">Sent</NativeSelectOption><NativeSelectOption value="pending">Pending</NativeSelectOption><NativeSelectOption value="failed">Failed</NativeSelectOption><NativeSelectOption value="baseline">Baseline (no email)</NativeSelectOption></NativeSelect>
           </div>
