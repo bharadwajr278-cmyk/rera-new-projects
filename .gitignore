@@ -2,3 +2,6 @@
 .venv/
 __pycache__/
 data/
+!data/
+data/*
+!data/haryana_rera.sqlite3

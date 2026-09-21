@@ -46,6 +46,22 @@ docker compose logs -f
 
 The `data` directory is mounted so the deduplication database survives restarts and upgrades.
 
+## GitHub Actions (runs with the laptop off)
+
+The repository includes `.github/workflows/monitor-rera.yml`. GitHub runs it every
+20 minutes and the checked-in SQLite baseline prevents duplicate or historical
+alerts across fresh cloud runners.
+
+Before enabling live email, add a repository Actions secret named
+`GMAIL_APP_PASSWORD` containing a Google App Password for
+`bharadwajr278@gmail.com`. Never use or commit the normal Gmail password. The
+workflow can also sync the hosted admin panel when `ADMIN_API_URL`,
+`ADMIN_API_KEY`, and `OAI_SITES_AUTH_TOKEN` are added as Actions secrets.
+
+You can test it from GitHub under **Actions → Monitor new RERA projects → Run
+workflow**. Scheduled runs may start a few minutes late during periods of high
+GitHub Actions load.
+
 ## Admin dashboard
 
 The project includes two admin interfaces:
