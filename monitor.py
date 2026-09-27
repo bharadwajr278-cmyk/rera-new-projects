@@ -465,6 +465,62 @@ def pending_projects(db: sqlite3.Connection) -> list[dict[str, object]]:
     return result
 
 
+def write_sent_history(
+    db: sqlite3.Connection, output_path: Path | None = None
+) -> Path:
+    """Export a sanitized ledger containing only successfully emailed projects."""
+    target = output_path or Path(
+        os.getenv("SENT_HISTORY_PATH", "data/sent_notifications.json")
+    )
+    rows = db.execute(
+        "SELECT registration_key, first_seen_at, notified_at, attempts, payload "
+        "FROM registrations WHERE notified_at IS NOT NULL AND attempts > 0 "
+        "ORDER BY notified_at DESC"
+    ).fetchall()
+    projects: list[dict[str, object]] = []
+    for registration_key, first_seen_at, notified_at, attempts, payload in rows:
+        project = json.loads(payload)
+        projects.append(
+            {
+                "id": registration_key,
+                "source": project.get("source", ""),
+                "project_name": project.get("name", ""),
+                "rera_number": project.get("registration_number", ""),
+                "developer": project.get("builder", ""),
+                "location": project.get("location", ""),
+                "city": project.get("city", ""),
+                "registration_date": project.get("registration_date", "Not available"),
+                "project_type": project.get("project_type", "Not available"),
+                "official_url": project.get("detail_url", ""),
+                "first_seen_at": first_seen_at,
+                "sent_at": notified_at,
+                "attempts": attempts,
+            }
+        )
+    target.parent.mkdir(parents=True, exist_ok=True)
+    if target.exists():
+        try:
+            existing = json.loads(target.read_text(encoding="utf-8"))
+            if existing.get("projects") == projects:
+                return target
+        except (OSError, ValueError, TypeError):
+            pass
+    target.write_text(
+        json.dumps(
+            {
+                "generated_at": datetime.now(timezone.utc).isoformat(),
+                "count": len(projects),
+                "projects": projects,
+            },
+            ensure_ascii=False,
+            indent=2,
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    return target
+
+
 def mark_notified(db: sqlite3.Connection, registration_key: str) -> bool:
     cursor = db.execute(
         "UPDATE registrations SET notified_at=?, attempts=attempts+1, last_error=NULL "
@@ -472,6 +528,8 @@ def mark_notified(db: sqlite3.Connection, registration_key: str) -> bool:
         (datetime.now(timezone.utc).isoformat(), registration_key),
     )
     db.commit()
+    if cursor.rowcount == 1:
+        write_sent_history(db)
     return cursor.rowcount == 1
 
 
@@ -589,6 +647,7 @@ def check_once(
         sent,
         "queued" if collect_only else "sent",
     )
+    write_sent_history(db)
     return total_projects, sent
 
 

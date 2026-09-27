@@ -5,3 +5,4 @@ data/
 !data/
 data/*
 !data/haryana_rera.sqlite3
+!data/sent_notifications.json

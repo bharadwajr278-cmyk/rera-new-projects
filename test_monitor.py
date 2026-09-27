@@ -12,6 +12,7 @@ from monitor import (
     mark_notified,
     open_database,
     pending_projects,
+    write_sent_history,
 )
 
 
@@ -73,6 +74,28 @@ class MonitorTests(unittest.TestCase):
             self.assertTrue(mark_notified(db, project.key))
             self.assertEqual(pending_projects(db), [])
             self.assertFalse(mark_notified(db, project.key))
+            db.close()
+
+    def test_sent_history_excludes_historical_baseline(self):
+        with tempfile.TemporaryDirectory() as folder:
+            db = open_database(Path(folder) / "state.sqlite3")
+            baseline = Project("R1", "P1", "Historical", "Builder", "Sector 1", "FARIDABAD", "HRERA", "", "", "")
+            sent = Project("R2", "P2", "New launch", "Builder", "Sector 2", "GURUGRAM", "HRERA", "", "", "")
+            db.execute(
+                "INSERT INTO registrations(registration_key, first_seen_at, notified_at, payload, attempts) VALUES (?, ?, ?, ?, ?)",
+                (baseline.key, "2026-09-20T00:00:00+00:00", "2026-09-20T00:00:00+00:00", json.dumps(baseline.__dict__), 0),
+            )
+            db.execute(
+                "INSERT INTO registrations(registration_key, first_seen_at, notified_at, payload, attempts) VALUES (?, ?, ?, ?, ?)",
+                (sent.key, "2026-09-21T00:00:00+00:00", "2026-09-21T00:05:00+00:00", json.dumps(sent.__dict__), 1),
+            )
+            db.commit()
+            output = Path(folder) / "sent.json"
+            write_sent_history(db, output)
+            history = json.loads(output.read_text(encoding="utf-8"))
+            self.assertEqual(history["count"], 1)
+            self.assertEqual(history["projects"][0]["project_name"], "New launch")
+            self.assertNotIn("email_recipient", history["projects"][0])
             db.close()
 
 

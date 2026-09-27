@@ -21,6 +21,8 @@ All Haryana districts remain monitored.
 
 SQLite stores every observed registration key with its authority source. Each source gets its own first-run baseline, so adding UP RERA does **not** send hundreds of historical emails. A newly detected record is queued until email succeeds and then marked notified, preventing normal restart/poll duplicates.
 
+After each check, `data/sent_notifications.json` is refreshed with a sanitized history containing only projects whose email was successfully sent. Historical baseline rows, failed sends, pending sends, credentials, and recipient addresses are excluded. The Brokket Feed News admin panel reads this ledger through its authenticated server proxy.
+
 ## Quick start on Windows
 
 1. Install Python 3.11 or newer.

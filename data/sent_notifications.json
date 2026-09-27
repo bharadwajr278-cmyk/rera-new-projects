@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-09-27T07:31:35.821301+00:00",
+  "count": 1,
+  "projects": [
+    {
+      "id": "HARYANA RERA::R1",
+      "source": "Haryana RERA",
+      "project_name": "Queued Project",
+      "rera_number": "R1",
+      "developer": "Builder",
+      "location": "Sector 1",
+      "city": "GURUGRAM",
+      "registration_date": "Not available",
+      "project_type": "Not available",
+      "official_url": "",
+      "first_seen_at": "2026-09-21T00:00:00+00:00",
+      "sent_at": "2026-09-27T07:31:35.801710+00:00",
+      "attempts": 1
+    }
+  ]
+}
