@@ -521,7 +521,11 @@ def write_sent_history(
     return target
 
 
-def mark_notified(db: sqlite3.Connection, registration_key: str) -> bool:
+def mark_notified(
+    db: sqlite3.Connection,
+    registration_key: str,
+    history_path: Path | None = None,
+) -> bool:
     cursor = db.execute(
         "UPDATE registrations SET notified_at=?, attempts=attempts+1, last_error=NULL "
         "WHERE registration_key=? AND notified_at IS NULL",
@@ -529,7 +533,7 @@ def mark_notified(db: sqlite3.Connection, registration_key: str) -> bool:
     )
     db.commit()
     if cursor.rowcount == 1:
-        write_sent_history(db)
+        write_sent_history(db, history_path)
     return cursor.rowcount == 1
 
 

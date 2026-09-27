@@ -71,9 +71,10 @@ class MonitorTests(unittest.TestCase):
             db.commit()
             queued = pending_projects(db)
             self.assertEqual(queued[0]["registration_key"], project.key)
-            self.assertTrue(mark_notified(db, project.key))
+            history_path = Path(folder) / "sent-history.json"
+            self.assertTrue(mark_notified(db, project.key, history_path))
             self.assertEqual(pending_projects(db), [])
-            self.assertFalse(mark_notified(db, project.key))
+            self.assertFalse(mark_notified(db, project.key, history_path))
             db.close()
 
     def test_sent_history_excludes_historical_baseline(self):
