@@ -1,5 +1,36 @@
 {
-  "generated_at": "2026-09-27T07:33:02.407299+00:00",
-  "count": 0,
-  "projects": []
+  "generated_at": "2026-09-27T08:16:31.355538+00:00",
+  "count": 2,
+  "projects": [
+    {
+      "id": "UP RERA::UPRERAPRJ251610/09/2026",
+      "source": "UP RERA",
+      "project_name": "SKYTECH COLOURS AVENUE TOWER C",
+      "rera_number": "UPRERAPRJ251610/09/2026",
+      "developer": "Jatasya promoters Pvt ltd",
+      "location": "Gautam Buddha Nagar district (Noida, Greater Noida and Yamuna Expressway)",
+      "city": "NOIDA / GREATER NOIDA",
+      "registration_date": "Not available in district list (registration number indicates 09/2026)",
+      "project_type": "Not available",
+      "official_url": "https://www.up-rera.in/View_projects.aspx",
+      "first_seen_at": "2026-09-26T10:13:01.913338+00:00",
+      "sent_at": "2026-09-27T08:16:29.450077+00:00",
+      "attempts": 9
+    },
+    {
+      "id": "HARYANA RERA::GGM/1092/824/2026/64 DATED 14.09.2026",
+      "source": "Haryana RERA",
+      "project_name": "THE AUREVA",
+      "rera_number": "GGM/1092/824/2026/64 DATED 14.09.2026",
+      "developer": "DLF HOME DEVELOPERS LIMITED",
+      "location": "SECTOR 63, GURUGRAM, HARYANA- 122102",
+      "city": "GURUGRAM",
+      "registration_date": "Not available",
+      "project_type": "Not available",
+      "official_url": "https://haryanarera.gov.in/view_project/searchprojectDetail/4183",
+      "first_seen_at": "2026-09-25T14:23:11.151099+00:00",
+      "sent_at": "2026-09-27T08:16:24.438346+00:00",
+      "attempts": 14
+    }
+  ]
 }
