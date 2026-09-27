@@ -1,6 +1,6 @@
 # Haryana + UP RERA new-registration email monitor
 
-This service polls both official Haryana RERA registered-project lists (Panchkula/all other Haryana districts and the separate Gurugram authority list) plus the official UP RERA Gautam Buddha Nagar district feed. It emails each newly appearing registration to `bharadwajr278@gmail.com`.
+This service polls both official Haryana RERA registered-project lists (Panchkula/all other Haryana districts and the separate Gurugram authority list) plus the official UP RERA Gautam Buddha Nagar district feed. It emails each newly appearing registration to `bharadwajr278@gmail.com` and `tech@brokket.com`.
 
 Priority coverage:
 
@@ -28,7 +28,7 @@ After each check, `data/sent_notifications.json` is refreshed with a sanitized h
 1. Install Python 3.11 or newer.
 2. Copy `.env.example` to `.env`.
 3. Enable Google two-step verification on the sending Gmail account, create a Google App Password, and put that 16-character app password in `SMTP_PASSWORD`. Do not use your normal Google password.
-4. Fill `SMTP_USERNAME` and `EMAIL_FROM`. `EMAIL_TO` is already set to `bharadwajr278@gmail.com`.
+4. Fill `SMTP_USERNAME` and `EMAIL_FROM`. `EMAIL_TO` accepts a comma-separated recipient list.
 5. Run:
 
    ```powershell

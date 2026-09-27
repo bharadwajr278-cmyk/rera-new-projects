@@ -18,7 +18,7 @@ import time
 from dataclasses import asdict, dataclass
 from datetime import datetime, timezone
 from email.message import EmailMessage
-from email.utils import format_datetime
+from email.utils import format_datetime, getaddresses
 from pathlib import Path
 from typing import Iterable
 from urllib.parse import urljoin
@@ -299,19 +299,27 @@ def open_database(path: Path) -> sqlite3.Connection:
     return connection
 
 
+def configured_recipients(raw: str | None = None) -> list[str]:
+    value = raw if raw is not None else os.getenv("EMAIL_TO", "bharadwajr278@gmail.com")
+    recipients = [address.strip() for _name, address in getaddresses([value]) if address.strip()]
+    if not recipients:
+        raise RuntimeError("EMAIL_TO must contain at least one valid recipient")
+    return recipients
+
+
 def smtp_send(project: Project) -> None:
     host = os.getenv("SMTP_HOST", "smtp.gmail.com").strip()
     port = int(os.getenv("SMTP_PORT", "587"))
     user = required_env("SMTP_USERNAME")
     password = required_env("SMTP_PASSWORD")
-    recipient = os.getenv("EMAIL_TO", "bharadwajr278@gmail.com").strip()
+    recipients = configured_recipients()
     sender = os.getenv("EMAIL_FROM", user).strip()
 
     badge = "[PRIORITY] " if project.priority else ""
     msg = EmailMessage()
     msg["Subject"] = f"{badge}New {project.source} registration: {project.name}"
     msg["From"] = sender
-    msg["To"] = recipient
+    msg["To"] = ", ".join(recipients)
     msg["Date"] = format_datetime(datetime.now(timezone.utc))
     domain = sender.split("@", 1)[-1] if "@" in sender else None
     digest = hashlib.sha256(project.key.encode("utf-8")).hexdigest()[:24]
@@ -354,7 +362,17 @@ def smtp_send(project: Project) -> None:
             smtp.starttls()
             smtp.ehlo()
         smtp.login(user, password)
-        smtp.send_message(msg)
+        smtp.send_message(msg, to_addrs=recipients)
+
+
+def send_existing_registration(db: sqlite3.Connection, registration_key: str) -> None:
+    row = db.execute(
+        "SELECT payload FROM registrations WHERE registration_key=?",
+        (registration_key,),
+    ).fetchone()
+    if row is None:
+        raise RuntimeError(f"Registration key was not found: {registration_key}")
+    smtp_send(Project(**json.loads(row[0])))
 
 
 def store_baseline(db: sqlite3.Connection, projects: list[Project]) -> None:
@@ -684,6 +702,16 @@ def main() -> int:
         updated = mark_notified(db, sys.argv[position + 1])
         db.close()
         return 0 if updated else 1
+    if "--send-existing" in sys.argv:
+        position = sys.argv.index("--send-existing")
+        if position + 1 >= len(sys.argv):
+            logging.error("--send-existing requires a registration key")
+            db.close()
+            return 2
+        send_existing_registration(db, sys.argv[position + 1])
+        logging.info("Existing registration email sent successfully")
+        db.close()
+        return 0
     if "--test-email" in sys.argv:
         smtp_send(
             Project(

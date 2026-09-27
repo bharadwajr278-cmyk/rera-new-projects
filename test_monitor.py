@@ -6,6 +6,7 @@ from pathlib import Path
 from monitor import (
     GURUGRAM_PORTAL_URL,
     Project,
+    configured_recipients,
     extract_registered_projects,
     extract_up_rera_projects,
     infer_project_type,
@@ -17,6 +18,12 @@ from monitor import (
 
 
 class MonitorTests(unittest.TestCase):
+    def test_multiple_email_recipients(self):
+        self.assertEqual(
+            configured_recipients("bharadwajr278@gmail.com, tech@brokket.com"),
+            ["bharadwajr278@gmail.com", "tech@brokket.com"],
+        )
+
     def test_gurugram_uses_separate_official_registration_list(self):
         self.assertEqual(
             GURUGRAM_PORTAL_URL,

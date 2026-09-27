@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: "*/20 * * * *"
   workflow_dispatch:
+    inputs:
+      catchup_aureva_to_brokket:
+        description: "Send only The Aureva catch-up email to tech@brokket.com"
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: write
@@ -24,7 +30,7 @@ jobs:
       SMTP_USERNAME: bharadwajr278@gmail.com
       SMTP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
       EMAIL_FROM: bharadwajr278@gmail.com
-      EMAIL_TO: bharadwajr278@gmail.com
+      EMAIL_TO: bharadwajr278@gmail.com,tech@brokket.com
       ALERT_ON_FIRST_RUN: "false"
       DRY_RUN: "false"
       ADMIN_API_URL: ${{ secrets.ADMIN_API_URL }}
@@ -53,9 +59,17 @@ jobs:
           fi
 
       - name: Check official RERA feeds and send new alerts
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.catchup_aureva_to_brokket != true }}
         run: python monitor.py --once
 
+      - name: Send The Aureva catch-up email to Brokket
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.catchup_aureva_to_brokket == true }}
+        env:
+          EMAIL_TO: tech@brokket.com
+        run: python monitor.py --send-existing "HARYANA RERA::GGM/1092/824/2026/64 DATED 14.09.2026"
+
       - name: Persist deduplication state
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.catchup_aureva_to_brokket != true }}
         shell: bash
         run: |
           if git diff --quiet -- data/haryana_rera.sqlite3 data/sent_notifications.json; then
