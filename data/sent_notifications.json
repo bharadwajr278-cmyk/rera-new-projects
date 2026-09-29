@@ -1,7 +1,22 @@
 {
-  "generated_at": "2026-09-27T08:16:31.355538+00:00",
-  "count": 2,
+  "generated_at": "2026-09-29T15:05:21.743118+00:00",
+  "count": 3,
   "projects": [
+    {
+      "id": "UP RERA::ID2173762",
+      "source": "UP RERA",
+      "project_name": "PRATEEK THE DECO VERIDIAN",
+      "rera_number": "ID2173762",
+      "developer": "NYMPHEA INFRASTRUCTURE PRIVATE LIMITED",
+      "location": "Gautam Buddha Nagar district (Noida, Greater Noida and Yamuna Expressway)",
+      "city": "NOIDA / GREATER NOIDA",
+      "registration_date": "Not available in district list",
+      "project_type": "Not available",
+      "official_url": "https://www.up-rera.in/View_projects.aspx",
+      "first_seen_at": "2026-09-29T15:05:18.188308+00:00",
+      "sent_at": "2026-09-29T15:05:20.260026+00:00",
+      "attempts": 1
+    },
     {
       "id": "UP RERA::UPRERAPRJ251610/09/2026",
       "source": "UP RERA",
