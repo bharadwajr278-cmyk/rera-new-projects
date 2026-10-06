@@ -1,7 +1,22 @@
 {
-  "generated_at": "2026-10-06T09:03:52.216274+00:00",
-  "count": 7,
+  "generated_at": "2026-10-06T15:59:58.477089+00:00",
+  "count": 8,
   "projects": [
+    {
+      "id": "HARYANA RERA::HRERA-PKL-AMB-989-2026",
+      "source": "Haryana RERA",
+      "project_name": "JAGGI GRAND I",
+      "rera_number": "HRERA-PKL-AMB-989-2026",
+      "developer": "JAIGURUJI BLESSINGS PRIVATE LIMITED",
+      "location": "VILLAGE KHURAMPUR MAJRI SECTO R 16",
+      "city": "AMBALA",
+      "registration_date": "01-Oct-2026",
+      "project_type": "Not available",
+      "official_url": "https://haryanarera.gov.in/view_project/searchprojectDetail/4303",
+      "first_seen_at": "2026-10-06T15:59:38.090382+00:00",
+      "sent_at": "2026-10-06T15:59:43.454655+00:00",
+      "attempts": 1
+    },
     {
       "id": "HARYANA RERA::HRERA-PKL-PKL-985-2026",
       "source": "Haryana RERA",
