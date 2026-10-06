@@ -1,7 +1,22 @@
 {
-  "generated_at": "2026-10-05T14:49:38.613434+00:00",
-  "count": 6,
+  "generated_at": "2026-10-06T09:03:52.216274+00:00",
+  "count": 7,
   "projects": [
+    {
+      "id": "HARYANA RERA::HRERA-PKL-PKL-985-2026",
+      "source": "Haryana RERA",
+      "project_name": "URBANA GREEN CITY PHASE II",
+      "rera_number": "HRERA-PKL-PKL-985-2026",
+      "developer": "SUNLIT INFRACON LLP",
+      "location": "VILLAGE BILLAH SECTOR 16 KOT BEHLA URBAN COMPLEX",
+      "city": "PANCHKULA",
+      "registration_date": "28-Sep-2026",
+      "project_type": "Not available",
+      "official_url": "https://haryanarera.gov.in/view_project/searchprojectDetail/4258",
+      "first_seen_at": "2026-10-06T09:03:39.563646+00:00",
+      "sent_at": "2026-10-06T09:03:43.881354+00:00",
+      "attempts": 1
+    },
     {
       "id": "HARYANA RERA::HRERA-PKL-SNP-986-2026",
       "source": "Haryana RERA",
