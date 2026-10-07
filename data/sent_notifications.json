@@ -1,7 +1,22 @@
 {
-  "generated_at": "2026-10-07T06:11:46.783939+00:00",
-  "count": 11,
+  "generated_at": "2026-10-07T13:32:15.260397+00:00",
+  "count": 12,
   "projects": [
+    {
+      "id": "HARYANA RERA::HRERA-PKL-JJR-990-2026",
+      "source": "Haryana RERA",
+      "project_name": "GLEN WOOD PHASE 2",
+      "rera_number": "HRERA-PKL-JJR-990-2026",
+      "developer": "HCBS DEVELOPMENTS LTD",
+      "location": "REVENUE ESTATE OF VILLAGE JAU NDHI SECTOR 29 JHAJJAR",
+      "city": "JHAJJAR",
+      "registration_date": "05-Oct-2026",
+      "project_type": "Not available",
+      "official_url": "https://haryanarera.gov.in/view_project/searchprojectDetail/4264",
+      "first_seen_at": "2026-10-07T13:31:38.857385+00:00",
+      "sent_at": "2026-10-07T13:31:58.571668+00:00",
+      "attempts": 1
+    },
     {
       "id": "HARYANA RERA::GGM/1088/820/2026/60 DATED 11.09.2026",
       "source": "Haryana RERA",
