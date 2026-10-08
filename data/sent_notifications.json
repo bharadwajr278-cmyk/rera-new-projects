@@ -1,7 +1,37 @@
 {
-  "generated_at": "2026-10-07T13:32:15.260397+00:00",
-  "count": 12,
+  "generated_at": "2026-10-08T11:25:15.583523+00:00",
+  "count": 14,
   "projects": [
+    {
+      "id": "UP RERA::UPRERAPRJ414014/10/2026",
+      "source": "UP RERA",
+      "project_name": "LEAFSONG RETREAT",
+      "rera_number": "UPRERAPRJ414014/10/2026",
+      "developer": "Hero Realty Private Limited",
+      "location": "Gautam Buddha Nagar district (Noida, Greater Noida and Yamuna Expressway)",
+      "city": "NOIDA / GREATER NOIDA",
+      "registration_date": "Not available in district list (registration number indicates 10/2026)",
+      "project_type": "Not available",
+      "official_url": "https://www.up-rera.in/View_projects.aspx",
+      "first_seen_at": "2026-10-08T11:25:11.384438+00:00",
+      "sent_at": "2026-10-08T11:25:15.543256+00:00",
+      "attempts": 1
+    },
+    {
+      "id": "UP RERA::UPRERAPRJ880689/10/2026",
+      "source": "UP RERA",
+      "project_name": "DXN-ORION",
+      "rera_number": "UPRERAPRJ880689/10/2026",
+      "developer": "EMERALD PROMOTERS PVT. LTD.",
+      "location": "Gautam Buddha Nagar district (Noida, Greater Noida and Yamuna Expressway)",
+      "city": "NOIDA / GREATER NOIDA",
+      "registration_date": "Not available in district list (registration number indicates 10/2026)",
+      "project_type": "Not available",
+      "official_url": "https://www.up-rera.in/View_projects.aspx",
+      "first_seen_at": "2026-10-08T11:25:11.384438+00:00",
+      "sent_at": "2026-10-08T11:25:13.113759+00:00",
+      "attempts": 1
+    },
     {
       "id": "HARYANA RERA::HRERA-PKL-JJR-990-2026",
       "source": "Haryana RERA",
