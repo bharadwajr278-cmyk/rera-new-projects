@@ -1,7 +1,22 @@
 {
-  "generated_at": "2026-10-08T11:25:15.583523+00:00",
-  "count": 14,
+  "generated_at": "2026-10-16T10:05:02.678200+00:00",
+  "count": 15,
   "projects": [
+    {
+      "id": "HARYANA RERA::RC/REP/YHARERA/GGM/1080/812/2026/52 DATED 05.08.2026",
+      "source": "Haryana RERA",
+      "project_name": "MARBELLA PHASE 7",
+      "rera_number": "RC/REP/YHARERA/GGM/1080/812/2026/52 DATED 05.08.2026",
+      "developer": "EMAAR INDIA LIMITED",
+      "location": "SECTOR 66",
+      "city": "GURUGRAM",
+      "registration_date": "Not available",
+      "project_type": "Not available",
+      "official_url": "https://haryanarera.gov.in/view_project/searchprojectDetail/4098",
+      "first_seen_at": "2026-10-16T10:04:54.814291+00:00",
+      "sent_at": "2026-10-16T10:04:59.147639+00:00",
+      "attempts": 1
+    },
     {
       "id": "UP RERA::UPRERAPRJ414014/10/2026",
       "source": "UP RERA",
