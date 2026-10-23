@@ -1,7 +1,37 @@
 {
-  "generated_at": "2026-10-21T14:18:53.708387+00:00",
-  "count": 22,
+  "generated_at": "2026-10-23T11:45:59.836675+00:00",
+  "count": 24,
   "projects": [
+    {
+      "id": "HARYANA RERA::HRERA-PKL-PWL-999-2026",
+      "source": "Haryana RERA",
+      "project_name": "AARVIK GREENS",
+      "rera_number": "HRERA-PKL-PWL-999-2026",
+      "developer": "AARVIK BUILDCON INFRA LLP",
+      "location": "VILLAGE PRITHLA SECTOR - 6 DI STRICT PALWAL",
+      "city": "PALWAL",
+      "registration_date": "21-Oct-2026",
+      "project_type": "Not available",
+      "official_url": "https://haryanarera.gov.in/view_project/searchprojectDetail/4321",
+      "first_seen_at": "2026-10-23T11:45:41.092226+00:00",
+      "sent_at": "2026-10-23T11:45:52.077539+00:00",
+      "attempts": 1
+    },
+    {
+      "id": "HARYANA RERA::HRERA-PKL-KRL-1000-2026",
+      "source": "Haryana RERA",
+      "project_name": "ALPHA JASMINE ENCLAVE",
+      "rera_number": "HRERA-PKL-KRL-1000-2026",
+      "developer": "ALPHA CORP DEVELOPMENT LIMITED",
+      "location": "VILLAGE-TIKRI, SECTOR-29",
+      "city": "KARNAL",
+      "registration_date": "21-Oct-2026",
+      "project_type": "Not available",
+      "official_url": "https://haryanarera.gov.in/view_project/searchprojectDetail/3963",
+      "first_seen_at": "2026-10-23T11:45:41.092226+00:00",
+      "sent_at": "2026-10-23T11:45:45.726570+00:00",
+      "attempts": 1
+    },
     {
       "id": "HARYANA RERA::HRERA-PKL-SNP-995-2026",
       "source": "Haryana RERA",
