@@ -1,7 +1,22 @@
 {
-  "generated_at": "2026-10-23T11:45:59.836675+00:00",
-  "count": 24,
+  "generated_at": "2026-10-25T17:43:37.285094+00:00",
+  "count": 25,
   "projects": [
+    {
+      "id": "UP RERA::ID2195123",
+      "source": "UP RERA",
+      "project_name": "GODREJ GOLF RESERVE",
+      "rera_number": "ID2195123",
+      "developer": "Godrej Properties Limited",
+      "location": "Gautam Buddha Nagar district (Noida, Greater Noida and Yamuna Expressway)",
+      "city": "NOIDA / GREATER NOIDA",
+      "registration_date": "Not available in district list",
+      "project_type": "Not available",
+      "official_url": "https://www.up-rera.in/View_projects.aspx",
+      "first_seen_at": "2026-10-25T17:43:34.300567+00:00",
+      "sent_at": "2026-10-25T17:43:35.529992+00:00",
+      "attempts": 1
+    },
     {
       "id": "HARYANA RERA::HRERA-PKL-PWL-999-2026",
       "source": "Haryana RERA",
