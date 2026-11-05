@@ -1,7 +1,22 @@
 {
-  "generated_at": "2026-11-04T18:40:56.237814+00:00",
-  "count": 41,
+  "generated_at": "2026-11-05T12:56:31.255113+00:00",
+  "count": 42,
   "projects": [
+    {
+      "id": "HARYANA RERA::HRERA-PKL-KRL-1013-2026",
+      "source": "Haryana RERA",
+      "project_name": "PALM CITY",
+      "rera_number": "HRERA-PKL-KRL-1013-2026",
+      "developer": "SONI REALTORS PRIVATE LIMITED",
+      "location": "VILLAGE BUDDA KHERA SECTOR 32",
+      "city": "KARNAL",
+      "registration_date": "05-Nov-2026",
+      "project_type": "Not available",
+      "official_url": "https://haryanarera.gov.in/view_project/searchprojectDetail/4310",
+      "first_seen_at": "2026-11-05T12:56:19.563167+00:00",
+      "sent_at": "2026-11-05T12:56:23.776671+00:00",
+      "attempts": 1
+    },
     {
       "id": "HARYANA RERA::HRERA-PKL-RWR-1012-2026",
       "source": "Haryana RERA",
