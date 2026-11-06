@@ -1,7 +1,22 @@
 {
-  "generated_at": "2026-11-05T12:56:31.255113+00:00",
-  "count": 42,
+  "generated_at": "2026-11-06T15:45:27.571195+00:00",
+  "count": 43,
   "projects": [
+    {
+      "id": "HARYANA RERA::GGM/1095/827/2026/67 DATED 02.11.2026",
+      "source": "Haryana RERA",
+      "project_name": "SAKURA",
+      "rera_number": "GGM/1095/827/2026/67 DATED 02.11.2026",
+      "developer": "PARDOS CRAFT HOMES PVT. LTD.",
+      "location": "VILLAGE - HAYATPUR, SECTOR - 90, GURUGRAM",
+      "city": "GURUGRAM",
+      "registration_date": "Not available",
+      "project_type": "Not available",
+      "official_url": "https://haryanarera.gov.in/view_project/searchprojectDetail/4271",
+      "first_seen_at": "2026-11-06T15:45:20.748269+00:00",
+      "sent_at": "2026-11-06T15:45:25.183759+00:00",
+      "attempts": 1
+    },
     {
       "id": "HARYANA RERA::HRERA-PKL-KRL-1013-2026",
       "source": "Haryana RERA",
