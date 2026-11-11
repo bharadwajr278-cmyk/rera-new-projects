@@ -1,7 +1,22 @@
 {
-  "generated_at": "2026-11-07T13:42:52.432384+00:00",
-  "count": 44,
+  "generated_at": "2026-11-11T12:07:12.373117+00:00",
+  "count": 45,
   "projects": [
+    {
+      "id": "HARYANA RERA::HRERA-PKL-KRL-1014-2026",
+      "source": "Haryana RERA",
+      "project_name": "METROPOLE-THE GARDEN CITY PHASE II",
+      "rera_number": "HRERA-PKL-KRL-1014-2026",
+      "developer": "LANDMARK ESTATE",
+      "location": "VILLAGE ASSANDH, SECTOR 5",
+      "city": "KARNAL",
+      "registration_date": "10-Nov-2026",
+      "project_type": "Not available",
+      "official_url": "https://haryanarera.gov.in/view_project/searchprojectDetail/4232",
+      "first_seen_at": "2026-11-11T12:06:51.028870+00:00",
+      "sent_at": "2026-11-11T12:06:55.772917+00:00",
+      "attempts": 1
+    },
     {
       "id": "UP RERA::UPRERAPRJ530680/11/2026",
       "source": "UP RERA",
