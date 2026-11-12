@@ -1,7 +1,22 @@
 {
-  "generated_at": "2026-11-11T12:07:12.373117+00:00",
-  "count": 45,
+  "generated_at": "2026-11-12T17:37:53.101027+00:00",
+  "count": 46,
   "projects": [
+    {
+      "id": "HARYANA RERA::HRERA-PKL-HSR-1015-2026",
+      "source": "Haryana RERA",
+      "project_name": "DL RESIDENCY",
+      "rera_number": "HRERA-PKL-HSR-1015-2026",
+      "developer": "SSK DEVELOPERS",
+      "location": "VILLAGE MIRZAPUR",
+      "city": "HISAR",
+      "registration_date": "11-Nov-2026",
+      "project_type": "Not available",
+      "official_url": "https://haryanarera.gov.in/view_project/searchprojectDetail/4369",
+      "first_seen_at": "2026-11-12T17:37:39.197610+00:00",
+      "sent_at": "2026-11-12T17:37:42.946335+00:00",
+      "attempts": 1
+    },
     {
       "id": "HARYANA RERA::HRERA-PKL-KRL-1014-2026",
       "source": "Haryana RERA",
