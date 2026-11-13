@@ -1,7 +1,22 @@
 {
-  "generated_at": "2026-11-12T17:37:53.101027+00:00",
-  "count": 46,
+  "generated_at": "2026-11-13T11:07:34.703717+00:00",
+  "count": 47,
   "projects": [
+    {
+      "id": "HARYANA RERA::GGM/1098/830/2026/70 DATED 05.11.2026",
+      "source": "Haryana RERA",
+      "project_name": "MEFFIER GOLDEN PARK",
+      "rera_number": "GGM/1098/830/2026/70 DATED 05.11.2026",
+      "developer": "GOEL & SON'S DEVELOPERS PVT LTD",
+      "location": "VILLAGE KHAIKA, SECTOR 04, SO HNA GURUGRAM",
+      "city": "GURUGRAM",
+      "registration_date": "Not available",
+      "project_type": "Not available",
+      "official_url": "https://haryanarera.gov.in/view_project/searchprojectDetail/4105",
+      "first_seen_at": "2026-11-13T11:07:27.904143+00:00",
+      "sent_at": "2026-11-13T11:07:32.627920+00:00",
+      "attempts": 1
+    },
     {
       "id": "HARYANA RERA::HRERA-PKL-HSR-1015-2026",
       "source": "Haryana RERA",
