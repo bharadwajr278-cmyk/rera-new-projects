@@ -1,7 +1,22 @@
 {
-  "generated_at": "2026-11-13T11:07:34.703717+00:00",
-  "count": 47,
+  "generated_at": "2026-11-14T17:35:50.218868+00:00",
+  "count": 48,
   "projects": [
+    {
+      "id": "UP RERA::ID2201888",
+      "source": "UP RERA",
+      "project_name": "Prestige Bougainvillea Gardens",
+      "rera_number": "ID2201888",
+      "developer": "Allure Developers Private Limited",
+      "location": "Gautam Buddha Nagar district (Noida, Greater Noida and Yamuna Expressway)",
+      "city": "NOIDA / GREATER NOIDA",
+      "registration_date": "Not available in district list",
+      "project_type": "Not available",
+      "official_url": "https://www.up-rera.in/View_projects.aspx",
+      "first_seen_at": "2026-11-14T17:35:47.717633+00:00",
+      "sent_at": "2026-11-14T17:35:48.736807+00:00",
+      "attempts": 1
+    },
     {
       "id": "HARYANA RERA::GGM/1098/830/2026/70 DATED 05.11.2026",
       "source": "Haryana RERA",
