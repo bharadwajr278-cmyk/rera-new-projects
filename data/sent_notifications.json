@@ -1,7 +1,37 @@
 {
-  "generated_at": "2026-11-14T17:35:50.218868+00:00",
-  "count": 48,
+  "generated_at": "2026-11-18T16:53:55.151187+00:00",
+  "count": 50,
   "projects": [
+    {
+      "id": "HARYANA RERA::HRERA-PKL-SNP-1017-2026",
+      "source": "Haryana RERA",
+      "project_name": "ANANTHAM 88",
+      "rera_number": "HRERA-PKL-SNP-1017-2026",
+      "developer": "BIRDVIEW HOUSING PROJECTS LLP",
+      "location": "VILLAGE MURTHAL SECTOR 88",
+      "city": "SONIPAT",
+      "registration_date": "12-Nov-2026",
+      "project_type": "Not available",
+      "official_url": "https://haryanarera.gov.in/view_project/searchprojectDetail/4372",
+      "first_seen_at": "2026-11-18T16:53:36.378293+00:00",
+      "sent_at": "2026-11-18T16:53:45.718141+00:00",
+      "attempts": 1
+    },
+    {
+      "id": "HARYANA RERA::HRERA-PKL-JJR-1016-2026",
+      "source": "Haryana RERA",
+      "project_name": "POCKET D, F & G",
+      "rera_number": "HRERA-PKL-JJR-1016-2026",
+      "developer": "MODEL ECONOMIC TOWNSHIP LIMITED",
+      "location": "SECTOR-8, YAKUBPUR AND FATEHP UR, MODEL ECONOMIC TOWNSHIP LIMITED",
+      "city": "JHAJJAR",
+      "registration_date": "12-Nov-2026",
+      "project_type": "Not available",
+      "official_url": "https://haryanarera.gov.in/view_project/searchprojectDetail/4348",
+      "first_seen_at": "2026-11-18T16:53:36.378293+00:00",
+      "sent_at": "2026-11-18T16:53:40.768745+00:00",
+      "attempts": 1
+    },
     {
       "id": "UP RERA::ID2201888",
       "source": "UP RERA",
