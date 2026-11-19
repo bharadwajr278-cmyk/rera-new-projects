@@ -1,7 +1,22 @@
 {
-  "generated_at": "2026-11-18T16:53:55.151187+00:00",
-  "count": 50,
+  "generated_at": "2026-11-19T04:14:27.142803+00:00",
+  "count": 51,
   "projects": [
+    {
+      "id": "HARYANA RERA::GGM/1105/837/2026/77 DATED 17.11.2026",
+      "source": "Haryana RERA",
+      "project_name": "EMAAR BUSINESS SQUARE",
+      "rera_number": "GGM/1105/837/2026/77 DATED 17.11.2026",
+      "developer": "EMAAR INDIA LIMITED",
+      "location": "SECTOR 65-66",
+      "city": "GURUGRAM",
+      "registration_date": "Not available",
+      "project_type": "Not available",
+      "official_url": "https://haryanarera.gov.in/view_project/searchprojectDetail/4364",
+      "first_seen_at": "2026-11-19T04:14:21.644635+00:00",
+      "sent_at": "2026-11-19T04:14:26.047823+00:00",
+      "attempts": 1
+    },
     {
       "id": "HARYANA RERA::HRERA-PKL-SNP-1017-2026",
       "source": "Haryana RERA",
