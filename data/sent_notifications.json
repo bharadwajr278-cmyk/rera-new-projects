@@ -1,7 +1,37 @@
 {
-  "generated_at": "2026-11-20T10:51:17.227194+00:00",
-  "count": 53,
+  "generated_at": "2026-11-20T18:56:44.771042+00:00",
+  "count": 55,
   "projects": [
+    {
+      "id": "HARYANA RERA::GGM/1099/831/2026/71 DATED 05.11.2026 DATED 05.11.2026",
+      "source": "Haryana RERA",
+      "project_name": "THE BUNGALOWS",
+      "rera_number": "GGM/1099/831/2026/71 DATED 05.11.2026 DATED 05.11.2026",
+      "developer": "BASE BUILDWELL PRIVATE LIMITED",
+      "location": "VILLAGE BEHRAMPUR, SECTOR 59, GURGAON - 122098, HARYANA",
+      "city": "GURUGRAM",
+      "registration_date": "Not available",
+      "project_type": "Not available",
+      "official_url": "https://haryanarera.gov.in/view_project/searchprojectDetail/4313",
+      "first_seen_at": "2026-11-20T18:56:35.434504+00:00",
+      "sent_at": "2026-11-20T18:56:44.226384+00:00",
+      "attempts": 1
+    },
+    {
+      "id": "HARYANA RERA::GGM/1104/836/2026/76 DATED 16.11.2026",
+      "source": "Haryana RERA",
+      "project_name": "EXPERION EMERELLE RESERVE",
+      "rera_number": "GGM/1104/836/2026/76 DATED 16.11.2026",
+      "developer": "EXPERION DEVELOPERS PRIVATE LIMITED",
+      "location": "VILLAGE HARSARU, SECTOR-88A, GURUGRAM, HARYANA",
+      "city": "GURUGRAM",
+      "registration_date": "Not available",
+      "project_type": "Not available",
+      "official_url": "https://haryanarera.gov.in/view_project/searchprojectDetail/4367",
+      "first_seen_at": "2026-11-20T18:56:35.434504+00:00",
+      "sent_at": "2026-11-20T18:56:39.625387+00:00",
+      "attempts": 1
+    },
     {
       "id": "UP RERA::ID2239669",
       "source": "UP RERA",
