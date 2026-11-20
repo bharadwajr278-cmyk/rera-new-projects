@@ -1,7 +1,37 @@
 {
-  "generated_at": "2026-11-19T04:14:27.142803+00:00",
-  "count": 51,
+  "generated_at": "2026-11-20T10:51:17.227194+00:00",
+  "count": 53,
   "projects": [
+    {
+      "id": "UP RERA::ID2239669",
+      "source": "UP RERA",
+      "project_name": "AZURE COUNTY PHASE-1",
+      "rera_number": "ID2239669",
+      "developer": "Perfect Megastructure Pvt Ltd",
+      "location": "Gautam Buddha Nagar district (Noida, Greater Noida and Yamuna Expressway)",
+      "city": "NOIDA / GREATER NOIDA",
+      "registration_date": "Not available in district list",
+      "project_type": "Not available",
+      "official_url": "https://www.up-rera.in/View_projects.aspx",
+      "first_seen_at": "2026-11-20T10:51:15.967656+00:00",
+      "sent_at": "2026-11-20T10:51:17.175445+00:00",
+      "attempts": 1
+    },
+    {
+      "id": "HARYANA RERA::GGM/1101/833/2026/73 DATED 06.11.2026",
+      "source": "Haryana RERA",
+      "project_name": "THE ICONIC RESIDENCES GURUGRAM",
+      "rera_number": "GGM/1101/833/2026/73 DATED 06.11.2026",
+      "developer": "M/S SIGNATUREGLOBAL HOMES LIMITED",
+      "location": "VILLAGE- GADAULI KALAN, SECTO R-37D, GURUGRAM, HARYANA",
+      "city": "GURUGRAM",
+      "registration_date": "Not available",
+      "project_type": "Not available",
+      "official_url": "https://haryanarera.gov.in/view_project/searchprojectDetail/4330",
+      "first_seen_at": "2026-11-20T10:51:09.257086+00:00",
+      "sent_at": "2026-11-20T10:51:14.069239+00:00",
+      "attempts": 1
+    },
     {
       "id": "HARYANA RERA::GGM/1105/837/2026/77 DATED 17.11.2026",
       "source": "Haryana RERA",
