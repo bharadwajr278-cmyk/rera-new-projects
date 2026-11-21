@@ -1,7 +1,22 @@
 {
-  "generated_at": "2026-11-20T18:56:44.771042+00:00",
-  "count": 55,
+  "generated_at": "2026-11-21T15:52:29.705172+00:00",
+  "count": 56,
   "projects": [
+    {
+      "id": "UP RERA::ID2241942",
+      "source": "UP RERA",
+      "project_name": "AZURE COUNTY PHASE-2",
+      "rera_number": "ID2241942",
+      "developer": "Perfect Megastructure Pvt Ltd",
+      "location": "Gautam Buddha Nagar district (Noida, Greater Noida and Yamuna Expressway)",
+      "city": "NOIDA / GREATER NOIDA",
+      "registration_date": "Not available in district list",
+      "project_type": "Not available",
+      "official_url": "https://www.up-rera.in/View_projects.aspx",
+      "first_seen_at": "2026-11-21T15:52:27.629773+00:00",
+      "sent_at": "2026-11-21T15:52:28.924384+00:00",
+      "attempts": 1
+    },
     {
       "id": "HARYANA RERA::GGM/1099/831/2026/71 DATED 05.11.2026 DATED 05.11.2026",
       "source": "Haryana RERA",
