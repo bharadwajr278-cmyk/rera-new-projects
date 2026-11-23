@@ -1,7 +1,22 @@
 {
-  "generated_at": "2026-11-21T15:52:29.705172+00:00",
-  "count": 56,
+  "generated_at": "2026-11-23T11:41:14.191633+00:00",
+  "count": 57,
   "projects": [
+    {
+      "id": "HARYANA RERA::HRERA-PKL-PKL-1018-2026",
+      "source": "Haryana RERA",
+      "project_name": "MEDALLION AVENUE",
+      "rera_number": "HRERA-PKL-PKL-1018-2026",
+      "developer": "M/S ORBIT COMMERCIAL PRIVATE LIMITED",
+      "location": "VILLAGE CHANDIMANDIR, SEC-1, PKUC",
+      "city": "PANCHKULA",
+      "registration_date": "20-Nov-2026",
+      "project_type": "Not available",
+      "official_url": "https://haryanarera.gov.in/view_project/searchprojectDetail/4353",
+      "first_seen_at": "2026-11-23T11:41:01.844482+00:00",
+      "sent_at": "2026-11-23T11:41:06.204738+00:00",
+      "attempts": 1
+    },
     {
       "id": "UP RERA::ID2241942",
       "source": "UP RERA",
