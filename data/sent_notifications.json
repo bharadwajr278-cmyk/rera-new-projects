@@ -1,7 +1,22 @@
 {
-  "generated_at": "2026-11-23T11:41:14.191633+00:00",
-  "count": 57,
+  "generated_at": "2026-11-25T12:00:38.707693+00:00",
+  "count": 58,
   "projects": [
+    {
+      "id": "HARYANA RERA::GGM/1093/825/2026/65 DATED 17.09.2026",
+      "source": "Haryana RERA",
+      "project_name": "DIVINE KAIROS",
+      "rera_number": "GGM/1093/825/2026/65 DATED 17.09.2026",
+      "developer": "SYNERGY REALTECH PRIVATE LIMITED",
+      "location": "THE REVENUE VILLAGE OF SILOKH ERA, SECTOR-30, GURUGRAM, HARYANA",
+      "city": "GURUGRAM",
+      "registration_date": "Not available",
+      "project_type": "Not available",
+      "official_url": "https://haryanarera.gov.in/view_project/searchprojectDetail/3582",
+      "first_seen_at": "2026-11-25T12:00:31.529727+00:00",
+      "sent_at": "2026-11-25T12:00:36.002032+00:00",
+      "attempts": 1
+    },
     {
       "id": "HARYANA RERA::HRERA-PKL-PKL-1018-2026",
       "source": "Haryana RERA",
